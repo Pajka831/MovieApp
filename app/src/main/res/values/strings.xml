@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MovieApp</string>
+    <string name="base_url">https://api.themoviedb.org/3/</string>
+    <string name="error_movie_list">Error occurred during movies download.</string>
+    <string name="error_movie_button">Retry</string>
+    <string name="error_favorite">Cannot add favorite</string>
+    <string name="details_date">Release date: %1$s</string>
+    <string name="details_rating">Rating: %1$s</string>
+</resources>
