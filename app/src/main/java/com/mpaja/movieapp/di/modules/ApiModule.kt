@@ -9,15 +9,11 @@ import com.mpaja.movieapp.data.api.AuthInterceptor
 import com.mpaja.movieapp.utils.enableTls12OnPreLollipop
 import dagger.Module
 import dagger.Provides
-import okhttp3.CipherSuite
-import okhttp3.ConnectionSpec
 import okhttp3.OkHttpClient
-import okhttp3.TlsVersion
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import java.util.*
 import javax.inject.Singleton
 
 
@@ -40,7 +36,7 @@ class ApiModule {
         builder.addInterceptor(
             AuthInterceptor(context)
         )
-        return enableTls12OnPreLollipop(builder)!!.build()
+        return enableTls12OnPreLollipop(builder).build()
     }
 
 

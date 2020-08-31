@@ -1,7 +1,7 @@
 package com.mpaja.movieapp.di.modules
 
-import com.mpaja.movieapp.ui.MainActivity
 import com.mpaja.movieapp.di.ActivityScope
+import com.mpaja.movieapp.ui.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

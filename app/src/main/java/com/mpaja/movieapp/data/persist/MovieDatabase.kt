@@ -7,7 +7,7 @@ import com.mpaja.movieapp.data.persist.entity.FavoriteEntity
 
 
 @Database(entities = [FavoriteEntity::class], version = 1)
-abstract class MovieDatabase: RoomDatabase() {
+abstract class MovieDatabase : RoomDatabase() {
     abstract fun favoriteDao(): FavoriteDao
 
     companion object {

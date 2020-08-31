@@ -22,8 +22,8 @@ class MovieDetailsFragment : BaseFragment() {
     @Inject
     lateinit var viewModelInjectionFactory: ViewModelInjectionFactory<MovieDetailsViewModel>
 
-    lateinit var viewModel: MovieDetailsViewModel
-    lateinit var binding: FragmentMovieDetailsBinding
+    private lateinit var viewModel: MovieDetailsViewModel
+    private lateinit var binding: FragmentMovieDetailsBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?

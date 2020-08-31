@@ -15,7 +15,6 @@ import java.io.InputStream
 @GlideModule
 class CustomOkHttpGlideModule : AppGlideModule() {
 
-
     override fun registerComponents(context: Context, glide: Glide, registry: Registry) {
         val builder = OkHttpClient.Builder()
 

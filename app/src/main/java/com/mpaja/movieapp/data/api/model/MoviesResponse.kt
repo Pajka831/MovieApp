@@ -1,4 +1,5 @@
 package com.mpaja.movieapp.data.api.model
+
 import com.google.gson.annotations.SerializedName
 
 

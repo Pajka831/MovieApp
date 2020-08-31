@@ -22,7 +22,8 @@ abstract class DataModule {
         @Provides
         @Singleton
         @JvmStatic
-        fun provideFavoriteDao(movieDatabase: MovieDatabase): FavoriteDao = movieDatabase.favoriteDao()
+        fun provideFavoriteDao(movieDatabase: MovieDatabase): FavoriteDao =
+            movieDatabase.favoriteDao()
 
         @Provides
         @Singleton

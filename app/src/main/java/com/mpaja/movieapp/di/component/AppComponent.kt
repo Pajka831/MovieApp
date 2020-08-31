@@ -2,7 +2,10 @@ package com.mpaja.movieapp.di.component
 
 import android.app.Application
 import com.mpaja.movieapp.MovieApp
-import com.mpaja.movieapp.di.modules.*
+import com.mpaja.movieapp.di.modules.ActivityBuildersModule
+import com.mpaja.movieapp.di.modules.ApiModule
+import com.mpaja.movieapp.di.modules.AppModule
+import com.mpaja.movieapp.di.modules.DataModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule

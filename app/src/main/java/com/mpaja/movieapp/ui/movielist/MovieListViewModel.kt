@@ -41,7 +41,7 @@ class MovieListViewModel @Inject constructor(private val repository: Repository)
         )
     }
 
-    fun getAutoCorrect(query: String){
+    fun getAutoCorrect(query: String) {
         compositeDisposable.add(
             repository.getSearchAutoCorrect(query).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -53,7 +53,7 @@ class MovieListViewModel @Inject constructor(private val repository: Repository)
         )
     }
 
-    fun searchMovies(query: String){
+    fun searchMovies(query: String) {
         compositeDisposable.add(
             repository.getSearchedMovies(query).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -66,7 +66,7 @@ class MovieListViewModel @Inject constructor(private val repository: Repository)
         )
     }
 
-    fun handleFavorite(id: Int, isFavorite: Boolean){
+    fun handleFavorite(id: Int, isFavorite: Boolean) {
         compositeDisposable.add(
             repository.handleFavorite(id, isFavorite).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

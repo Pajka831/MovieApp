@@ -7,8 +7,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.mpaja.movieapp.R
 import com.mpaja.movieapp.data.repository.model.MovieModel
 import com.mpaja.movieapp.databinding.ItemMovieBinding
@@ -31,7 +29,7 @@ class MovieRVAdapter @Inject constructor() :
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        when(holder){
+        when (holder) {
             is MovieViewHolder -> {
                 val movie = getItem(position)
                 holder.binding.model = movie
@@ -41,16 +39,22 @@ class MovieRVAdapter @Inject constructor() :
                 }
 
                 holder.itemView.toggleButton.setOnCheckedChangeListener { button, isChecked ->
-                    if (isChecked){
-                        onItemClickedListener?.onFavoriteClick(movie.id, isFavorite = false)
-                    } else onItemClickedListener?.onFavoriteClick(movie.id, isFavorite = true)
+                    if (button.isPressed) {
+                        if (isChecked) {
+                            movie.favorite = true
+                            onItemClickedListener?.onFavoriteClick(movie.id, isFavorite = false)
+                        } else {
+                            movie.favorite = false
+                            onItemClickedListener?.onFavoriteClick(movie.id, isFavorite = true)
+                        }
+                    }
                 }
             }
         }
 
     }
 
-    fun addMovies(movies: List<MovieModel>){
+    fun addMovies(movies: List<MovieModel>) {
         submitList(movies)
     }
 

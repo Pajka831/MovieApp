@@ -15,9 +15,3 @@ annotation class ActivityScope
  */
 @Scope
 annotation class FragmentScope
-
-/**
- * Dagger scope for Services
- */
-@Scope
-annotation class ServiceScope

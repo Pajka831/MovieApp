@@ -10,7 +10,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class MovieDetailsViewModel @Inject constructor(private val repository: Repository): ViewModel() {
+class MovieDetailsViewModel @Inject constructor(private val repository: Repository) : ViewModel() {
 
     private var compositeDisposable = CompositeDisposable()
 
@@ -18,7 +18,7 @@ class MovieDetailsViewModel @Inject constructor(private val repository: Reposito
     val errorLiveData: LiveData<Event<Int>>
         get() = _errorLiveData
 
-    fun handleFavorite(id: Int, isFavorite: Boolean){
+    fun handleFavorite(id: Int, isFavorite: Boolean) {
         compositeDisposable.add(
             repository.handleFavorite(id, isFavorite).subscribeOn(Schedulers.io())
                 .subscribe({
