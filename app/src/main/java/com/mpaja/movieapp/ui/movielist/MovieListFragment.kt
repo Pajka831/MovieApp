@@ -68,6 +68,7 @@ class MovieListFragment : BaseFragment(), MovieRVAdapter.OnItemClickedListener,
         image_search.setOnClickListener {
             if (autoCompleteTextView.length() > 0) {
                 autoCompleteTextView.setText("")
+                viewModel.getMovies()
             }
         }
 
@@ -100,6 +101,11 @@ class MovieListFragment : BaseFragment(), MovieRVAdapter.OnItemClickedListener,
                 return@setOnEditorActionListener true
             }
             return@setOnEditorActionListener false
+        }
+
+        autoCompleteTextView.setOnItemClickListener { adapterView, view, i, l ->
+            viewModel.searchMovies(autoCompleteTextView.text.toString())
+            autoCompleteTextView.dismissDropDown()
         }
     }
 
